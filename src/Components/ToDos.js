@@ -14,4 +14,20 @@ class ToDosClassComponent extends React.Component{
   }
 }
 
-export default ToDosClassComponent;
+// export default ToDosClassComponent;
+
+function ToDos(props) {
+
+  const { toDos } = props;
+
+  return(
+    <ul>
+      {toDos.map(toDo =>(
+        <li key={toDo.id}>{toDo.name}</li>
+      ))}
+
+    </ul>
+  )
+}
+
+export default ToDos;
