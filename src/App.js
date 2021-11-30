@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import { Switch, Route } from 'react-router-dom';
 import Home from './Components/Home';
 import ToDos from './Components/ToDos';
 
@@ -14,8 +15,14 @@ const data = [
 function App() {
   return (
     <div className="App">
+      <Switch>
+        <Route path="/" exact>
       <Home />
+      </Route>
+      <Route path="/toDos">
       <ToDos toDos={data} />
+      </Route>
+      </Switch>
     </div>
   );
 }
