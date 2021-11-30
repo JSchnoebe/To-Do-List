@@ -36,3 +36,23 @@
     transform: rotate(360deg);
   }
 }
+
+nav {
+  border: solid black 2px;
+}
+
+ul li{
+  list-style-type: none;
+  margin: 0;
+  padding: 5px;
+  display: inline;
+}
+
+.todo {
+  margin: 10px;
+  display: inline-block;
+}
+
+.todo h1 {
+  background-color: lightblue;
+}

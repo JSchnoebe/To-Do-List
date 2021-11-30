@@ -3,6 +3,8 @@ import './App.css';
 import { Switch, Route, Link } from 'react-router-dom';
 import Home from './Components/Home';
 import ToDos from './Components/ToDos';
+import ToDosForm from './Components/ToDosForm'
+import { useState } from 'react';
 
 const data = [
   { name: 'Walk the dog', assignee: 'John', dueDate: '1/15/22', difficulty: 2, isComplete: false},
@@ -11,8 +13,25 @@ const data = [
   { name: 'Mow lawn', assignee: 'Tim', dueDate: '1/11/22', difficulty: 5, isComplete: true},
   { name: 'Feed pets', assignee: 'Amy', dueDate: '1/14/22', difficulty: 1, isComplete: false}
 ]
+let nextId = 10;
 
 function App() {
+  const [toDoItems, setToDoItems] = useState(data);
+
+  function handleSave(formData) {
+    const newToDoItem = {
+      ...formData,
+      id: nextId++,
+    };
+
+    const newToDoItems = [
+      ...toDoItems,
+      newToDoItem,
+    ];
+
+    setToDoItems(newToDoItems);
+  }
+
   return (
     <div className="App">
       <nav>
@@ -30,6 +49,7 @@ function App() {
       <Home />
       </Route>
       <Route path="/toDos">
+        <ToDosForm onSave={handleSave} />
       <ToDos toDos={data} />
       </Route>
       </Switch>
