@@ -20,8 +20,13 @@ function ToDosForm(props) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" name="name" placeholder="To Do" />
-      <input type="text" name="assignee" placeholder="Assign To" />
+      <h2>Add A To Do!</h2>
+      <p>To Do Item</p>
+      <input type="text" name="name" placeholder="Item Details" />
+      <p>Assigned To</p>
+      <input type="text" name="assignee" placeholder="Assignee Name" />
+      <p>Difficulty</p>
+      <input type="range" class="form-control-range" id="formControlRange" />
       <button type="submit">Save</button>
     </form>
   )
