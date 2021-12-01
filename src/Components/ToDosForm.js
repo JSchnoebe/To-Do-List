@@ -6,9 +6,11 @@ function ToDosForm(props) {
 
     const form = e.target;
     const { name } = form.elements;
+    const { assignee } = form.elements;
 
     const formData = {
       name: name.value,
+      assignee: assignee.value,
     };
 
     onSave(formData);
@@ -27,7 +29,7 @@ function ToDosForm(props) {
       <input type="text" name="assignee" placeholder="Assignee Name" />
       <p>Difficulty</p>
       <input type="range" class="form-control-range" id="formControlRange" />
-      <button type="submit">Save</button>
+      <button type="submit">Add Item</button>
     </form>
   )
 }

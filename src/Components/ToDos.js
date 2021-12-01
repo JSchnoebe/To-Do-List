@@ -27,10 +27,11 @@ function ToDos(props) {
     <>
     <div className="todoContainer">
     {toDos.map(toDo =>(
-    <Card className="mb-2 todo" style={{ width: '18rem'}}>
-    <Card.Header as="h1">{toDo.assignee}{toDo.isDone}</Card.Header>
+    <Card className="mb-2 todo" style={{ width: '24rem'}}>
+    <Card.Header as="par">{toDo.assignee}</Card.Header>
     <Card.Body>
-        <Card.Title>{toDo.name}</Card.Title>
+        <Card.Title className="title">{toDo.name}</Card.Title>
+        <p>Dificulty:{toDo.difficulty}</p>
       </Card.Body>
       </Card>
     ))}

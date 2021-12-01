@@ -37,20 +37,24 @@ function App() {
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link className="homelink" to="/">Home</Link>
           </li>
           <li>
-            <a href="/toDos">To Do List</a>
+            <a className="todolink" href="/toDos">To Do List</a>
+          </li>
+          <li>
+            <a className="loginlink" href="/login">Login</a>
           </li>
         </ul>
       </nav>
+      <header>To Do List Manager</header>
       <Switch>
         <Route path="/" exact>
       <Home />
       </Route>
       <Route path="/toDos">
         <ToDosForm onSave={handleSave} />
-      <ToDos toDos={data} />
+      <ToDos toDos={toDoItems} />
       </Route>
       </Switch>
     </div>
