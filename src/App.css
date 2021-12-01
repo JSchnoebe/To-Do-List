@@ -51,8 +51,6 @@ ul li{
 
 .todo {
   margin-top: 10px;
-  display: inline-block;
-  vertical-align: top;
 }
 
 .todo h1 {
@@ -65,7 +63,8 @@ Form {
   margin-right: 10px;
   border: solid 2px black;
   border-radius: 5px;
-  padding: 5px;
+  padding: 10px;
+  vertical-align: top;
 }
 
 Form input {
@@ -76,4 +75,8 @@ Form input {
 
 Form p {
   text-align: left;
+}
+
+.todoContainer {
+  display: inline-block;
 }

@@ -24,18 +24,18 @@ function ToDos(props) {
   const { toDos } = props;
 
   return(
-    <div class="todo">
-    <Card style={{ width: '18rem' }}>
-    {toDos.map(toDo =>(
     <>
+    <div className="todoContainer">
+    {toDos.map(toDo =>(
+    <Card className="mb-2 todo" style={{ width: '18rem'}}>
     <Card.Header as="h1">{toDo.assignee}{toDo.isDone}</Card.Header>
     <Card.Body>
         <Card.Title>{toDo.name}</Card.Title>
       </Card.Body>
-    </>
+      </Card>
     ))}
-  </Card>
-  </div>
+    </div>
+    </>
     )}
 
 export default ToDos;
