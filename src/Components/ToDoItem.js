@@ -1,17 +1,28 @@
-import { Toast } from "react-bootstrap";
+import { Toast, Badge } from "react-bootstrap";
 
-// function ToDoItem(props) {
+function ToDoItem(props) {
 
-//   const { toDos } = props;
+  const { toDos } = props;
 
-//   return (
-//     <>
-//     {toDos.map(toDo =>(
-//       <Toast onClose={handleDelete} className="mt-4" style={{ width: '32rem' }}  key={task.title}></Toast>
-//     )
-//     )}
-//     </>
-//   )
-// }
+  const updateToDo = () => {
+  }
 
-// export default ToDoItem;
+  return (
+    <>
+    {toDos.map(toDo =>(
+      <Toast>
+        <Toast.Header>
+          {toDo.isComplete ? <Badge className="updateToDoClick1" onClick={updateToDo} onUpdate={updateToDo}pill bg="success">Complete</Badge>
+          : <Badge className="updateToDoClick2" onClick={updateToDo} pill bg="danger">Pending</Badge>}
+          <strong className="me-auto">Bootstrap</strong>
+          <small>11 mins ago</small>
+        </Toast.Header>
+        <Toast.Body>Hello, world! This is a toast message.</Toast.Body>
+      </Toast>
+    )
+    )}
+    </>
+  )
+}
+
+export default ToDoItem;
