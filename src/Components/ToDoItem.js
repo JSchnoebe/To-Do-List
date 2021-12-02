@@ -14,8 +14,6 @@ function ToDoItem(props) {
         <Toast.Header>
           {toDo.isComplete ? <Badge className="updateToDoClick1" onClick={updateToDo} onUpdate={updateToDo}pill bg="success">Complete</Badge>
           : <Badge className="updateToDoClick2" onClick={updateToDo} pill bg="danger">Pending</Badge>}
-          <strong className="me-auto">Bootstrap</strong>
-          <small>11 mins ago</small>
         </Toast.Header>
         <Toast.Body>Hello, world! This is a toast message.</Toast.Body>
       </Toast>

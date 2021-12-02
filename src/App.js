@@ -4,6 +4,7 @@ import { Switch, Route, Link } from 'react-router-dom';
 import Home from './Components/Home';
 import ToDos from './Components/ToDos';
 import ToDosForm from './Components/ToDosForm'
+import ToDoItem from './Components/ToDoItem'
 import { useState } from 'react';
 
 const data = [
@@ -55,6 +56,7 @@ function App() {
       <Route path="/toDos">
         <ToDosForm onSave={handleSave} />
       <ToDos toDos={toDoItems} />
+      <ToDoItem />
       </Route>
       </Switch>
     </div>
