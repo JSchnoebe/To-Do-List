@@ -1,19 +1,19 @@
 import React from "react";
-import { Card } from 'react-bootstrap';
+import ToDoItem from './ToDoItem';
 
-class ToDosClassComponent extends React.Component{
-  render(){
-    const { toDos } = this.props;
-    return(
-      <ul>
-        {toDos.map(toDo =>(
-          <li key={toDo.id}>{toDo.name}</li>
-        ))}
+// class ToDosClassComponent extends React.Component{
+//   render(){
+//     const { toDos } = this.props;
+//     return(
+//       <ul>
+//         {toDos.map(toDo =>(
+//           <li key={toDo.id}>{toDo.name}</li>
+//         ))}
 
-      </ul>
-    )
-  }
-}
+//       </ul>
+//     )
+//   }
+// }
 
 // export default ToDosClassComponent;
 
@@ -21,22 +21,15 @@ class ToDosClassComponent extends React.Component{
 
 function ToDos(props) {
 
-  const { toDos } = props;
+  const { data, onDelete, onUpdate } = props;
 
   return(
     <>
-    <div className="todoContainer">
-    {toDos.map(toDo =>(
-    <Card className="mb-2 todo" style={{ width: '24rem'}}>
-    <Card.Header as="par">{toDo.assignee}</Card.Header>
-    <Card.Body>
-        <Card.Title className="title">{toDo.name}</Card.Title>
-        <p>Dificulty:{toDo.difficulty}</p>
-      </Card.Body>
-      </Card>
-    ))}
-    </div>
+    {data.map(toDo => (
+        <ToDoItem toDo={toDo} onDelete={onDelete} onUpdate={onUpdate} />
+      ))}
     </>
-    )}
+    )
+}
 
 export default ToDos;

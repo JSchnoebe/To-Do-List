@@ -1,25 +1,31 @@
-import { Toast, Badge } from "react-bootstrap";
+import React from "react";
+import { Toast } from "react-bootstrap";
 
 function ToDoItem(props) {
 
-  const { toDos } = props;
+  const { toDo, onDelete, onUpdate } = props;
 
-  const updateToDo = () => {
+  function removeTask() {
+    onDelete(toDo);
   }
 
+  function updateTask() {
+    onUpdate(toDo);
+  }
+
+
   return (
-    <>
-    {toDos.map(toDo =>(
-      <Toast>
+      <Toast onClose={removeTask} className="mt-4" style={{ width: '32rem' }} key={toDo.title}>
         <Toast.Header>
-          {toDo.isComplete ? <Badge className="updateToDoClick1" onClick={updateToDo} onUpdate={updateToDo}pill bg="success">Complete</Badge>
-          : <Badge className="updateToDoClick2" onClick={updateToDo} pill bg="danger">Pending</Badge>}
+          {toDo.isComplete ? <span className="badge rounded-pill bg-success" onClick={updateTask} pill bg="success">Complete</span>
+          : <span  className="badge rounded-pill bg-danger" onClick={updateTask} pill bg="danger">Pending</span>}
+          <span className="d-inline-block ms-2 me-auto">{toDo.assignee}</span>
         </Toast.Header>
-        <Toast.Body>Hello, world! This is a toast message.</Toast.Body>
+        <Toast.Body>
+          <p className="todo-title">{toDo.name}</p>
+          <p className="todo-difficulty">Difficulty: {toDo.difficulty}</p>
+        </Toast.Body>
       </Toast>
-    )
-    )}
-    </>
   )
 }
 

@@ -33,6 +33,28 @@ function App() {
     setToDoItems(newToDoItems);
   }
 
+  function handleUpdate(toDo) {
+    let newToDo = toDoItems.map(t => {
+      if (toDo === t) {
+        return {
+          ...toDo,
+          completed: !toDo.isComplete
+        } 
+      }
+      return t;
+    })
+    console.log("hello");
+    setToDoItems(newToDo);
+    };
+
+    function handleDelete(toDo) {
+      const updatedToDo = toDoItems.filter(t =>
+        t !== toDo)
+        setToDoItems(updatedToDo);
+        console.log('Updated To Do: ', updatedToDo)     
+    }
+
+
   return (
     <div className="App">
       <nav>
@@ -55,8 +77,7 @@ function App() {
       </Route>
       <Route path="/toDos">
         <ToDosForm onSave={handleSave} />
-      <ToDos toDos={toDoItems} />
-      <ToDoItem />
+      <ToDos data={toDoItems} onUpdate={handleUpdate} onDelete={handleDelete}/>
       </Route>
       </Switch>
     </div>

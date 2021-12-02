@@ -49,17 +49,6 @@ ul li{
   font-size: 30px;
 }
 
-.todo {
-  margin-top: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
-
-.todo par {
-  background-color: lightblue;
-  text-align: left;
-  font-weight: bold;
-}
-
 Form {
   margin-top: 10px;
   margin-right: 10px;
@@ -71,6 +60,10 @@ Form {
   vertical-align: top;
   float: left;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.mt-4 {
+  display: inline-block;
 }
 
 Form input {
@@ -86,10 +79,6 @@ Form p {
 
 Form h2 {
   text-align: left;
-}
-
-.todoContainer {
-  display: inline-block;
 }
 
 header {
