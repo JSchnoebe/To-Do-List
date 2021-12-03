@@ -38,7 +38,7 @@
 }
 
 nav {
-  border: solid black 2px;
+  background-color: rgb(44, 99, 250);
   text-align: left;
 }
 
@@ -49,34 +49,86 @@ ul li{
   font-size: 30px;
 }
 
-.todo {
-  margin-top: 10px;
-}
-
-.todo h1 {
-  background-color: lightblue;
-}
-
 Form {
-  display: inline-block;
   margin-top: 10px;
   margin-right: 10px;
+  margin-left: 50px;
+  width: 300px;
   border: solid 2px black;
   border-radius: 5px;
   padding: 10px;
   vertical-align: top;
+  float: left;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.mt-4 {
+  display: inline-block;
 }
 
 Form input {
-  display: block;
+  float: left;
   margin: 0 auto;
   margin-bottom: 10px;
+  width: 250px;
 }
 
 Form p {
   text-align: left;
 }
 
-.todoContainer {
-  display: inline-block;
+Form h2 {
+  text-align: left;
+}
+
+header {
+  background-color: rgb(70, 69, 69);
+  color: white;
+  font-size: 30px;
+  text-align: left;
+  padding-left: 10px;
+  margin: 0 auto;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 10px;
+  height: 50px;
+}
+
+.todolink {
+  text-decoration: none;
+  color: rgb(160, 197, 252);
+  margin-right: 10px;
+}
+
+.homelink {
+  text-decoration: none;
+  color: rgb(160, 197, 252);
+  margin-right: 10px;
+}
+
+.loginlink {
+  text-decoration: none;
+  color: rgb(160, 197, 252);
+}
+
+.todolink:hover {
+  border-bottom: solid rgb(160, 197, 252) 2px;
+}
+
+.homelink:hover {
+  border-bottom: solid rgb(160, 197, 252) 2px;
+}
+
+.loginlink:hover {
+  border-bottom: solid rgb(160, 197, 252) 2px;
+}
+
+button {
+  background-color: rgb(44, 99, 250);
+  color: white;
+  border-radius: 5px;
+  border: none;
+  float: left;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }

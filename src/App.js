@@ -4,6 +4,7 @@ import { Switch, Route, Link } from 'react-router-dom';
 import Home from './Components/Home';
 import ToDos from './Components/ToDos';
 import ToDosForm from './Components/ToDosForm'
+import ToDoItem from './Components/ToDoItem'
 import { useState } from 'react';
 
 const data = [
@@ -32,25 +33,51 @@ function App() {
     setToDoItems(newToDoItems);
   }
 
+  function handleUpdate(toDo) {
+    let newToDo = toDoItems.map(t => {
+      if (toDo === t) {
+        return {
+          ...toDo,
+          completed: !toDo.isComplete
+        } 
+      }
+      return t;
+    })
+    console.log("hello");
+    setToDoItems(newToDo);
+    };
+
+    function handleDelete(toDo) {
+      const updatedToDo = toDoItems.filter(t =>
+        t !== toDo)
+        setToDoItems(updatedToDo);
+        console.log('Updated To Do: ', updatedToDo)     
+    }
+
+
   return (
     <div className="App">
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link className="homelink" to="/">Home</Link>
           </li>
           <li>
-            <a href="/toDos">To Do List</a>
+            <a className="todolink" href="/toDos">To Do List</a>
+          </li>
+          <li>
+            <a className="loginlink" href="/login">Login</a>
           </li>
         </ul>
       </nav>
+      <header>To Do List Manager</header>
       <Switch>
         <Route path="/" exact>
       <Home />
       </Route>
       <Route path="/toDos">
         <ToDosForm onSave={handleSave} />
-      <ToDos toDos={data} />
+      <ToDos data={toDoItems} onUpdate={handleUpdate} onDelete={handleDelete}/>
       </Route>
       </Switch>
     </div>
